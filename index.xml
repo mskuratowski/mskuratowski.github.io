@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Hello World</title>
+      <link>https://mskuratowski.github.io/post/welcome/</link>
+      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://mskuratowski.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;My name is Maciej Skuratowski. I would like to say hello to all of you and welcome to my blog.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://mskuratowski.github.io/about/</link>
       <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
@@ -21,15 +30,6 @@
       <description>Bio I am a Microsoft Certified Professional and Full Stack Developer with 6+ years of experience.
 I have consulted for many clients, providing guidance on various software projects. These days I work mainly with Microsoft Azure and Web Development (ASP.NET Core and Angular 2+, VueJs), architecting solutions around PaaS, Azure Functions, App Service, Azure Cosmos DB, IoT and many other Azure services.
 I am big fan of clean &amp;amp; scalable architectures, micro-services, cloud infrastructure, and innovative edge technologies and best practices during engineer works.</description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://mskuratowski.github.io/post/welcome/</link>
-      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://mskuratowski.github.io/post/welcome/</guid>
-      <description>&lt;p&gt;TODO: Short Description&lt;/p&gt;</description>
     </item>
     
   </channel>

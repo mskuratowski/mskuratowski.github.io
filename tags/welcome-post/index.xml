@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2020, Maciej Skuratowski; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mskuratowski.github.io/tags/welcome-post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,10 +15,10 @@
     <item>
       <title>Hello World</title>
       <link>https://mskuratowski.github.io/post/welcome/</link>
-      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://mskuratowski.github.io/post/welcome/</guid>
-      <description>&lt;p&gt;TODO: Short Description&lt;/p&gt;</description>
+      <description>&lt;p&gt;My name is Maciej Skuratowski. I would like to say hello to all of you and welcome to my blog.&lt;/p&gt;</description>
     </item>
     
   </channel>
