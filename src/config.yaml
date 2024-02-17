@@ -1,0 +1,102 @@
+baseURL: http://azuremonkinsights.com/
+title: Azure Monk Insights
+paginate: 5
+theme: ["PaperMod"]
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts", "papermod"]
+
+services:
+  googleAnalytics:
+    ID: G-QNVDSXJ1NZ
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        # - name: About
+        #   url: about
+        #   weight: 5
+        # - name: Speaking
+        #   url: speaking
+        #   weight: 10
+        - name: Search
+          url: search/
+          weight: 15
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Azure Monkt Insights - Maciej Skuratowski Technical Blog"
+  author: Maciej Skuratowski
+
+  defaultTheme: light
+  disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+  images: ["images/papermod-cover.png"]
+
+  homeInfoParams:
+    Title: "Hello, I'm Maciej Skuratowski"
+    Content: >
+    
+      👋 Welcome to my blog, where innovation meets Azure cloud technology.
+
+      - I'm passionate about creating scalable, efficient solutions and navigating the complexities of the Azure ecosystem.
+
+      - Here, you'll find insights into the latest developments in cloud architecture. 
+
+      - If you're looking for guidance or have questions, feel free to reach out. Let's explore the world of Azure together.
+
+  socialIcons:
+    - name: github
+      title: GitHub
+      url: "https://github.com/mskuratowski/"
+    - name: X
+      title: X/Twitter
+      url: "https://twitter.com/mskuratowski"
+
+  assets:
+    disableHLJS: true
+  
+  markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false

@@ -1,8 +1,0 @@
-baseURL: http://azuremonkinsights.com/
-languageCode: en-us
-title: My New Hugo Site
-theme: ["PaperMod"]
-
-services:
-  googleAnalytics:
-    ID: G-QNVDSXJ1NZ
