@@ -34,12 +34,12 @@ languages:
       series: series
     menu:
       main:
-        # - name: About
-        #   url: about
-        #   weight: 5
-        # - name: Speaking
-        #   url: speaking
-        #   weight: 10
+        - name: About
+          url: about
+          weight: 5
+        - name: Speaking
+          url: speaking
+          weight: 10
         - name: Search
           url: search/
           weight: 15
