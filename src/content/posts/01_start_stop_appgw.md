@@ -1,6 +1,6 @@
 ---
 title: "Start/Stop Azure Application Gateway"
-date: "2023-02-12"
+date: "2024-02-12"
 description: "Discover how to automate the starting and stopping of Azure Application Gateways using PowerShell scripts and Azure Pipelines."
 summary: "Discover how to automate the starting and stopping of Azure Application Gateways using PowerShell scripts and Azure Pipelines."
 tags: ["azure", "azure application gateway", "azure devops", "azure pipelines"]
