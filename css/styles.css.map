@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "/home/runner/work/cloudmonkinsights/cloudmonkinsights",
+	"sourceRoot": "/home/runner/work/mskuratowski.github.io/mskuratowski.github.io",
 	"sources": [
 		"themes/hugo-clarity/assets/sass/main.sass",
 		"themes/hugo-clarity/assets/sass/_variables.sass",
