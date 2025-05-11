@@ -1,0 +1,11 @@
+baseURL = 'https://cloudmonkinsights.com/'
+title = 'Maciej Skuratowski – Tech Blog'
+theme = 'hugo-clarity'
+languageCode = 'en-us'
+
+[params]
+  description = 'Blog about cloud, development, DevOps, and tech insights.'
+  author = 'Maciej Skuratowski'
+
+[pagination]
+  pagerSize = 10
