@@ -1,0 +1,53 @@
+---
+title: "Building Internal Developer Platforms on Kubernetes"
+date: "2025-01-15"
+summary: "Lessons learned from designing and operating an Internal Developer Platform that serves 200+ engineers — from golden paths to self-service infrastructure."
+tags: ["Platform Engineering", "Kubernetes", "IDP", "DevEx"]
+readingTime: "8 min read"
+---
+
+## Why Platform Engineering Matters
+
+Every engineering organization eventually hits the same wall: developers spending more time fighting infrastructure than building features. The promise of "you build it, you run it" is powerful — but without the right abstractions, it becomes "you build it, you suffer through it."
+
+An Internal Developer Platform (IDP) is the answer. It provides golden paths — opinionated, well-supported workflows that cover the majority of use cases while still allowing escape hatches for edge cases.
+
+## The Architecture
+
+Our platform sits on top of Kubernetes and provides three core layers:
+
+1. **Infrastructure Abstraction** — Developers declare _what_ they need (a database, a cache, a queue), not _how_ to provision it. Crossplane translates these declarations into cloud resources.
+
+2. **Deployment Pipeline** — A GitOps-based workflow using ArgoCD. Push to main, get a deployment. No Jenkinsfiles, no pipeline YAML. The platform handles rollouts, canaries, and rollbacks.
+
+3. **Observability by Default** — Every service gets metrics, logs, and traces out of the box. No SDK integration required — the service mesh (Istio) and OpenTelemetry collectors handle it.
+
+## Golden Paths, Not Golden Cages
+
+The key insight: a platform should make the right thing the easy thing, not the _only_ thing.
+
+We provide scaffolding templates (powered by Backstage) that generate a new service with:
+
+- Dockerfile optimized for the language runtime
+- Helm chart with sensible defaults
+- CI pipeline that builds, tests, and pushes
+- Pre-configured alerts and dashboards
+
+But if a team needs something different — a custom runtime, a non-standard deployment strategy — they can always drop down to raw Kubernetes manifests.
+
+## Lessons Learned
+
+**Start with the developer experience, not the technology.** We initially built the platform bottom-up: Kubernetes, then Helm, then ArgoCD. What we should have done is start with the question: "What does a developer need to do on day one?"
+
+**Measure platform adoption, not platform features.** The number of CRDs you support doesn't matter. What matters is: how many teams are using the golden paths? How long does it take to go from "new service idea" to "running in production"?
+
+**Treat your platform as a product.** It has users (developers), it needs a roadmap, and it needs feedback loops. We run monthly surveys and track NPS for the platform team.
+
+## What's Next
+
+We're investing in two areas:
+
+- **AI-assisted operations** — Using LLMs to analyze incident patterns and suggest runbook actions
+- **Cost attribution** — Giving teams real-time visibility into their infrastructure spend, tied to business metrics
+
+Platform engineering is not about building the perfect abstraction. It's about continuously reducing the friction between an idea and production.
