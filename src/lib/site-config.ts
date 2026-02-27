@@ -29,7 +29,7 @@ export const siteConfig = {
       "ML Infrastructure",
       "Software Architect",
       ".NET",
-      "Go",
+      "Python",
       "CNCF",
     ],
     ogImage: "/images/og-image.png",
@@ -96,37 +96,37 @@ export const siteConfig = {
       icon: "component" as const,
       title: "Software Architecture",
       description:
-        "Designing distributed systems in .NET and Go — microservices, event-driven architectures, and high-throughput data processing pipelines.",
+        "Designing distributed systems in .NET and Python — microservices, event-driven architectures, and high-throughput data processing pipelines.",
       highlights: [
         "Microservices & event-driven architectures",
         "CQRS/ES patterns & distributed systems",
         "High-throughput data processing pipelines",
       ],
-      tags: [".NET", "Go", "Kafka", "gRPC", "CQRS", "Event Sourcing"],
+      tags: [".NET", "Python", "Kafka", "gRPC", "CQRS", "Event Sourcing"],
     },
   ],
 
   services: [
     {
-      icon: "container" as const,
+      icon: "ship-wheel" as const,
       title: "Kubernetes & Platform Engineering",
       description: "Production-grade cluster design, migration from VMs to containers, and Internal Developer Platform setup with GitOps workflows.",
       deliverables: ["K8s cluster architecture & setup", "CI/CD pipeline with ArgoCD/Flux", "Developer self-service portal", "Migration strategy & execution"],
     },
     {
-      icon: "git-branch" as const,
+      icon: "infinity" as const,
       title: "DevOps & GitOps",
       description: "End-to-end automation of your deployment pipeline — from infrastructure provisioning to production releases with full observability.",
       deliverables: ["GitOps workflow design", "IaC with Terraform/Pulumi", "Monitoring & alerting setup", "Incident response automation"],
     },
     {
-      icon: "cloud-cog" as const,
+      icon: "server-cog" as const,
       title: "Cloud Architecture",
       description: "Multi-cloud infrastructure design across Azure and GCP — landing zones, cost optimization, security posture, and compliance-ready setups.",
       deliverables: ["Cloud landing zone design", "Cost optimization audit", "Multi-cloud strategy", "Security & compliance review"],
     },
     {
-      icon: "search-code" as const,
+      icon: "scan-search" as const,
       title: "Architecture Review & Advisory",
       description: "Deep-dive analysis of your existing architecture with actionable recommendations. Identify bottlenecks, security gaps, and scaling opportunities.",
       deliverables: ["Architecture audit report", "Scaling recommendations", "Tech debt prioritization", "Team upskilling sessions"],

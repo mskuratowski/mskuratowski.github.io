@@ -46,16 +46,33 @@ function MicrosoftIcon({ className = "" }: { className?: string }) {
 
 const certIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   Kubestronaut: KubernetesIcon,
-  "Azure Solutions Architect Expert": AzureIcon,
+  "Azure Solutions Architect Expert": MicrosoftIcon,
   "GCP Professional Cloud Architect": GCPIcon,
-  "Azure DevOps Engineer Expert": AzureIcon,
+  "Azure DevOps Engineer Expert": MicrosoftIcon,
 };
 
-const issuerColors: Record<string, { bg: string; border: string; text: string; iconBg: string; iconText: string }> = {
-  CNCF: { bg: "from-[#326CE5]/5 via-white dark:via-neutral-900 to-[#326CE5]/[0.02]", border: "border-[#326CE5]/20", text: "text-[#326CE5]", iconBg: "bg-[#326CE5]", iconText: "text-white" },
-  Microsoft: { bg: "from-[#0078D4]/5 via-white dark:via-neutral-900 to-[#0078D4]/[0.02]", border: "border-[#0078D4]/20", text: "text-[#0078D4]", iconBg: "bg-[#0078D4]", iconText: "text-white" },
-  Google: { bg: "from-[#4285F4]/5 via-white dark:via-neutral-900 to-[#4285F4]/[0.02]", border: "border-[#4285F4]/20", text: "text-[#4285F4]", iconBg: "bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700", iconText: "" },
+const certColors: Record<string, { iconBg: string; iconText: string; badge: string; border: string }> = {
+  "Azure Solutions Architect Expert": {
+    iconBg: "bg-blue-50 dark:bg-blue-950",
+    iconText: "text-blue-600 dark:text-blue-400",
+    badge: "text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950",
+    border: "hover:border-blue-300 dark:hover:border-blue-700",
+  },
+  "GCP Professional Cloud Architect": {
+    iconBg: "bg-emerald-50 dark:bg-emerald-950",
+    iconText: "text-emerald-600 dark:text-emerald-400",
+    badge: "text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950",
+    border: "hover:border-emerald-300 dark:hover:border-emerald-700",
+  },
+  "Azure DevOps Engineer Expert": {
+    iconBg: "bg-violet-50 dark:bg-violet-950",
+    iconText: "text-violet-600 dark:text-violet-400",
+    badge: "text-violet-700 dark:text-violet-300 bg-violet-50 dark:bg-violet-950",
+    border: "hover:border-violet-300 dark:hover:border-violet-700",
+  },
 };
+
+const kubestronautTags = ["CKA", "CKAD", "CKS", "KCNA", "KCSA"];
 
 export function CertificationsSection() {
   const highlighted = siteConfig.certifications.filter((c) => c.highlight);
@@ -76,27 +93,35 @@ export function CertificationsSection() {
           const Icon = certIcons[cert.title];
           return (
             <AnimatedSection key={cert.title} className="mb-10">
-              <div className="relative overflow-hidden rounded-2xl border border-kube-blue/20 bg-gradient-to-br from-kube-blue/5 via-white dark:via-neutral-900 to-kube-sky/5 p-8 sm:p-10">
-                <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-kube-blue/5 blur-3xl" />
-                <div className="absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-kube-sky/5 blur-3xl" />
-                <div className="relative flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
+              <div className="rounded-xl border border-border border-l-4 border-l-kube-blue bg-surface p-6 sm:p-8">
+                <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
                   {Icon && (
-                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-kube-blue/10 bg-white dark:bg-neutral-900 shadow-sm">
-                      <Icon className="h-12 w-12" />
+                    <div className="inline-flex shrink-0 rounded-lg bg-blue-50 p-3 dark:bg-blue-950">
+                      <Icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                     </div>
                   )}
                   <div className="flex-1">
                     <div className="flex flex-col items-center gap-3 sm:flex-row">
-                      <h3 className="text-2xl font-bold text-text-primary">
+                      <h3 className="text-xl font-semibold text-text-primary">
                         {cert.title}
                       </h3>
-                      <span className="rounded-full bg-gradient-to-r from-kube-blue to-kube-sky px-3 py-0.5 text-xs font-semibold tracking-wide text-white uppercase">
+                      <span className="rounded-full bg-kube-blue/10 px-2.5 py-0.5 text-xs font-semibold tracking-wider text-kube-blue uppercase">
                         {cert.issuer}
                       </span>
                     </div>
-                    <p className="mt-3 max-w-2xl text-text-secondary leading-relaxed">
+                    <p className="mt-2 max-w-2xl text-sm text-text-secondary leading-relaxed">
                       {cert.description}
                     </p>
+                    <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
+                      {kubestronautTags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-blue-100 bg-blue-50/50 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:border-blue-900 dark:bg-blue-950/50 dark:text-blue-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -105,27 +130,21 @@ export function CertificationsSection() {
         })}
 
         {/* Other certs */}
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-3">
           {others.map((cert, i) => {
             const Icon = certIcons[cert.title];
-            const colors = issuerColors[cert.issuer] || {
-              bg: "from-accent/5 via-white dark:via-neutral-900 to-accent/[0.02]",
-              border: "border-accent/20",
-              text: "text-accent",
-              iconBg: "bg-accent",
-              iconText: "text-white",
-            };
+            const colors = certColors[cert.title];
 
             return (
               <AnimatedSection key={cert.title} delay={i * 0.1}>
-                <div className={`group h-full rounded-xl border ${colors.border} bg-gradient-to-br ${colors.bg} p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md`}>
+                <div className={`h-full rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:shadow-md ${colors?.border ?? ""}`}>
                   <div className="mb-4 flex items-center gap-3">
                     {Icon && (
-                      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg shadow-sm ${colors.iconBg}`}>
-                        <Icon className={`h-6 w-6 ${colors.iconText}`} />
+                      <div className={`inline-flex rounded-lg p-2 ${colors?.iconBg ?? ""}`}>
+                        <Icon className={`h-6 w-6 ${colors?.iconText ?? ""}`} />
                       </div>
                     )}
-                    <span className={`rounded-full ${colors.text} bg-current/10 px-2.5 py-0.5 text-xs font-semibold tracking-wider uppercase`}>
+                    <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${colors?.badge ?? ""}`}>
                       {cert.issuer}
                     </span>
                   </div>
