@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <article className="prose prose-gray max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-strong:text-text-primary prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-code:text-accent prose-code:before:content-none prose-code:after:content-none">
+          <article className="prose prose-gray dark:prose-invert max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-strong:text-text-primary prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-code:text-accent prose-code:before:content-none prose-code:after:content-none">
             {post.content}
           </article>
         </AnimatedSection>

@@ -4,10 +4,10 @@ import { Container } from "@/components/ui/Container";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const stats = [
-  { value: "12+", label: "Years of Experience" },
-  { value: "5", label: "Kubernetes Certs" },
-  { value: "2", label: "Cloud Platforms" },
-  { value: "Kubestronaut", label: "CNCF Title" },
+  { value: "12+", label: "Years in Production Systems" },
+  { value: "Top 500", label: "Kubestronaut Worldwide" },
+  { value: "Azure & GCP", label: "Multi-Cloud Certified" },
+  { value: "7+", label: "Industry Certifications" },
 ];
 
 export function StatsSection() {

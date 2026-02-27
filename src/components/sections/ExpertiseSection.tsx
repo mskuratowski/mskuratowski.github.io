@@ -14,10 +14,10 @@ const iconMap = {
 } as const;
 
 const cardColors: Record<string, { iconBg: string; iconText: string; dot: string; border: string; tagBorder: string; tagText: string }> = {
-  waypoints: { iconBg: "bg-blue-50", iconText: "text-blue-600", dot: "bg-blue-500", border: "hover:border-blue-300", tagBorder: "border-blue-100 bg-blue-50/50", tagText: "text-blue-700" },
-  "cloud-cog": { iconBg: "bg-emerald-50", iconText: "text-emerald-600", dot: "bg-emerald-500", border: "hover:border-emerald-300", tagBorder: "border-emerald-100 bg-emerald-50/50", tagText: "text-emerald-700" },
-  "brain-circuit": { iconBg: "bg-violet-50", iconText: "text-violet-600", dot: "bg-violet-500", border: "hover:border-violet-300", tagBorder: "border-violet-100 bg-violet-50/50", tagText: "text-violet-700" },
-  component: { iconBg: "bg-amber-50", iconText: "text-amber-600", dot: "bg-amber-500", border: "hover:border-amber-300", tagBorder: "border-amber-100 bg-amber-50/50", tagText: "text-amber-700" },
+  waypoints: { iconBg: "bg-blue-50 dark:bg-blue-950", iconText: "text-blue-600 dark:text-blue-400", dot: "bg-blue-500", border: "hover:border-blue-300 dark:hover:border-blue-700", tagBorder: "border-blue-100 dark:border-blue-900 bg-blue-50/50 dark:bg-blue-950/50", tagText: "text-blue-700 dark:text-blue-300" },
+  "cloud-cog": { iconBg: "bg-emerald-50 dark:bg-emerald-950", iconText: "text-emerald-600 dark:text-emerald-400", dot: "bg-emerald-500", border: "hover:border-emerald-300 dark:hover:border-emerald-700", tagBorder: "border-emerald-100 dark:border-emerald-900 bg-emerald-50/50 dark:bg-emerald-950/50", tagText: "text-emerald-700 dark:text-emerald-300" },
+  "brain-circuit": { iconBg: "bg-violet-50 dark:bg-violet-950", iconText: "text-violet-600 dark:text-violet-400", dot: "bg-violet-500", border: "hover:border-violet-300 dark:hover:border-violet-700", tagBorder: "border-violet-100 dark:border-violet-900 bg-violet-50/50 dark:bg-violet-950/50", tagText: "text-violet-700 dark:text-violet-300" },
+  component: { iconBg: "bg-amber-50 dark:bg-amber-950", iconText: "text-amber-600 dark:text-amber-400", dot: "bg-amber-500", border: "hover:border-amber-300 dark:hover:border-amber-700", tagBorder: "border-amber-100 dark:border-amber-900 bg-amber-50/50 dark:bg-amber-950/50", tagText: "text-amber-700 dark:text-amber-300" },
 };
 
 export function ExpertiseSection() {
