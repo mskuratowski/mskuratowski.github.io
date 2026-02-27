@@ -52,9 +52,9 @@ const certIcons: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 const issuerColors: Record<string, { bg: string; border: string; text: string; iconBg: string; iconText: string }> = {
-  CNCF: { bg: "from-[#326CE5]/5 via-white to-[#326CE5]/[0.02]", border: "border-[#326CE5]/20", text: "text-[#326CE5]", iconBg: "bg-[#326CE5]", iconText: "text-white" },
-  Microsoft: { bg: "from-[#0078D4]/5 via-white to-[#0078D4]/[0.02]", border: "border-[#0078D4]/20", text: "text-[#0078D4]", iconBg: "bg-[#0078D4]", iconText: "text-white" },
-  Google: { bg: "from-[#4285F4]/5 via-white to-[#4285F4]/[0.02]", border: "border-[#4285F4]/20", text: "text-[#4285F4]", iconBg: "bg-white border border-gray-200", iconText: "" },
+  CNCF: { bg: "from-[#326CE5]/5 via-white dark:via-neutral-900 to-[#326CE5]/[0.02]", border: "border-[#326CE5]/20", text: "text-[#326CE5]", iconBg: "bg-[#326CE5]", iconText: "text-white" },
+  Microsoft: { bg: "from-[#0078D4]/5 via-white dark:via-neutral-900 to-[#0078D4]/[0.02]", border: "border-[#0078D4]/20", text: "text-[#0078D4]", iconBg: "bg-[#0078D4]", iconText: "text-white" },
+  Google: { bg: "from-[#4285F4]/5 via-white dark:via-neutral-900 to-[#4285F4]/[0.02]", border: "border-[#4285F4]/20", text: "text-[#4285F4]", iconBg: "bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700", iconText: "" },
 };
 
 export function CertificationsSection() {
@@ -76,12 +76,12 @@ export function CertificationsSection() {
           const Icon = certIcons[cert.title];
           return (
             <AnimatedSection key={cert.title} className="mb-10">
-              <div className="relative overflow-hidden rounded-2xl border border-kube-blue/20 bg-gradient-to-br from-kube-blue/5 via-white to-kube-sky/5 p-8 sm:p-10">
+              <div className="relative overflow-hidden rounded-2xl border border-kube-blue/20 bg-gradient-to-br from-kube-blue/5 via-white dark:via-neutral-900 to-kube-sky/5 p-8 sm:p-10">
                 <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-kube-blue/5 blur-3xl" />
                 <div className="absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-kube-sky/5 blur-3xl" />
                 <div className="relative flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
                   {Icon && (
-                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-kube-blue/10 bg-white shadow-sm">
+                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-kube-blue/10 bg-white dark:bg-neutral-900 shadow-sm">
                       <Icon className="h-12 w-12" />
                     </div>
                   )}
@@ -109,7 +109,7 @@ export function CertificationsSection() {
           {others.map((cert, i) => {
             const Icon = certIcons[cert.title];
             const colors = issuerColors[cert.issuer] || {
-              bg: "from-accent/5 via-white to-accent/[0.02]",
+              bg: "from-accent/5 via-white dark:via-neutral-900 to-accent/[0.02]",
               border: "border-accent/20",
               text: "text-accent",
               iconBg: "bg-accent",

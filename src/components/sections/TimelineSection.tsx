@@ -25,7 +25,7 @@ export function TimelineSection() {
             >
               <div className="relative">
                 {/* Dot on the line */}
-                <div className="absolute -left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-white sm:-left-[calc(2rem+5px)]" />
+                <div className="absolute -left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-white dark:bg-neutral-900 sm:-left-[calc(2rem+5px)]" />
 
                 <span className="text-sm font-medium text-accent">
                   {item.period}
