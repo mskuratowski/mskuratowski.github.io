@@ -75,12 +75,12 @@ export function HeroSection() {
               custom={4}
               className="mt-8 flex flex-wrap gap-4"
             >
-              <Button href="#contact">
-                Get in Touch
+              <Button href="/work-with-me">
+                Work with me
                 <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button variant="outline" href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn Profile
+              <Button variant="outline" href="#contact">
+                Get in Touch
               </Button>
             </motion.div>
           </div>

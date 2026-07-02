@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -13,6 +14,9 @@ export function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // One-time sync with the theme class set by the inline <head> script
+    // before hydration — a state initializer would cause a hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDark(document.documentElement.classList.contains("dark"));
   }, []);
 
@@ -22,9 +26,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
+  // Close the mobile menu on navigation (state adjustment during render,
+  // avoids an extra effect — see react.dev "adjusting state when a prop changes")
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   const toggleTheme = () => {
     const next = !dark;
@@ -51,20 +59,20 @@ export function Header() {
     >
       <Container>
         <nav className="flex h-16 items-center justify-between">
-          <a href="/" className="text-lg font-semibold text-text-primary">
+          <Link href="/" className="text-lg font-semibold text-text-primary">
             <span className="text-text-tertiary">{"{ "}</span>
             ms
             <span className="text-text-tertiary">{" }"}</span>
-          </a>
+          </Link>
 
           {/* Desktop capsule nav */}
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <ul className="flex items-center gap-1 rounded-full border border-border bg-white/60 dark:bg-neutral-900/60 px-1.5 py-1 shadow-sm">
               {siteConfig.nav.map((item) => (
                 <li key={item.href}>
                   <a
                     href={resolveHref(item.href)}
-                    className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                    className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors xl:px-4 ${
                       isActive(item.href)
                         ? "bg-accent text-white"
                         : "text-text-secondary hover:bg-gray-100 dark:hover:bg-neutral-800 hover:text-text-primary"
@@ -86,7 +94,7 @@ export function Header() {
           </div>
 
           {/* Mobile controls */}
-          <div className="flex items-center gap-1 md:hidden">
+          <div className="flex items-center gap-1 lg:hidden">
             <button
               onClick={toggleTheme}
               className="inline-flex items-center justify-center rounded-lg p-2 text-text-secondary transition-colors hover:bg-gray-100 dark:hover:bg-neutral-800 hover:text-text-primary"
@@ -111,7 +119,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-border bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md md:hidden">
+        <div className="border-t border-border bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md lg:hidden">
           <Container>
             <ul className="space-y-1 py-4">
               {siteConfig.nav.map((item) => (

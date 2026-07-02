@@ -13,13 +13,6 @@ export interface Certification {
   highlight: boolean;
 }
 
-export interface TimelineItem {
-  period: string;
-  role: string;
-  company: string;
-  description: string;
-}
-
 export interface NavItem {
   label: string;
   href: string;

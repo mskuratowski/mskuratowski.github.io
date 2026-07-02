@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   description: siteConfig.metadata.description,
   keywords: [...siteConfig.metadata.keywords],
   authors: [{ name: siteConfig.name }],
+  alternates: {
+    types: { "application/rss+xml": "/feed.xml" },
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.metadata.locale,

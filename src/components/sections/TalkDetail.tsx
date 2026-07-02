@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowLeft,
   MapPin,
@@ -20,13 +21,13 @@ export function TalkDetail({ talk }: { talk: Talk }) {
     <section className="pt-28 pb-20 sm:pt-36">
       <Container className="max-w-3xl">
         <AnimatedSection>
-          <a
+          <Link
             href="/speaking"
             className="mb-8 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-text-primary"
           >
             <ArrowLeft className="h-4 w-4" />
             All talks
-          </a>
+          </Link>
 
           {/* Header */}
           <div className="mb-8">

@@ -1,35 +1,37 @@
 export const siteConfig = {
   name: "Maciej Skuratowski",
-  title: "Staff Engineer & Kubestronaut",
+  title: "Staff Engineer · Kubestronaut · Researcher",
   url: "https://maciejskuratowski.com",
-  location: "Rzeszow, Poland",
-  locationLabel: "Based in Rzeszow, Poland · Working globally",
+  location: "Rzeszów, Poland",
+  locationLabel: "Rzeszów, Poland · Remote worldwide (EU timezone)",
 
   hero: {
-    badge: "Staff Engineer & Kubestronaut",
+    badge: "Kubestronaut — top 500 worldwide",
     heading: "Hi, I'm Maciej.",
-    headingAccent: "I architect platforms that engineering teams depend on.",
+    headingAccent: "I make infrastructure invisible.",
     tagline:
-      "12+ years designing cloud infrastructure, Kubernetes platforms, and ML systems at scale. Kubestronaut (top 500 worldwide), multi-cloud architect, and hands-on technical leader — available for consulting and Staff IC roles.",
+      "Staff Engineer with 12+ years in cloud-native. I architect Kubernetes platforms and write the Go operators behind them — from GitOps delivery to ML infrastructure at scale.",
   },
 
   metadata: {
-    title: "Maciej Skuratowski | Staff Engineer & Kubestronaut",
+    title: "Maciej Skuratowski | Staff Engineer · Kubestronaut · Researcher",
     template: "%s | Maciej Skuratowski",
     description:
-      "Staff Engineer & Kubestronaut (top 500 worldwide). 12+ years in Kubernetes, Cloud Architecture, and ML Infrastructure. Available for Staff IC roles and consulting.",
+      "Staff Engineer & Kubestronaut (top 500 worldwide). Kubernetes, GitOps, and ML infrastructure consulting; research in serverless computing and ML systems.",
     keywords: [
       "Staff Engineer",
       "Kubestronaut",
       "Kubernetes",
       "Platform Engineering",
-      "Cloud Architecture",
-      "Azure",
-      "GCP",
-      "ML Infrastructure",
-      "Software Architect",
-      ".NET",
+      "GitOps",
+      "ArgoCD",
+      "Kubernetes Operators",
+      "Go",
       "Python",
+      "ML Infrastructure",
+      "Serverless",
+      "Azure",
+      "AKS",
       "CNCF",
     ],
     ogImage: "/images/og-image.png",
@@ -44,9 +46,6 @@ export const siteConfig = {
     calendly: "https://calendly.com/maciejskuratowski",
     calendlyEmbed: "https://calendly.com/maciejskuratowski/30min",
     upwork: "https://www.upwork.com/freelancers/~019a6f9823b0b91003",
-    toptal: "https://www.toptal.com/resume/maciej-skuratowski",
-    cv: "/resume/maciej-skuratowski-cv.pdf",
-    umami: "https://cloud.umami.is",
     youtubeVideoId: "VIDEO_ID_HERE",
   },
 
@@ -58,78 +57,135 @@ export const siteConfig = {
   expertise: [
     {
       icon: "waypoints" as const,
-      title: "Platform Engineering",
+      title: "Platform Engineering & GitOps",
       description:
-        "Designing and operating Internal Developer Platforms on Kubernetes — from cluster provisioning to fully automated CI/CD pipelines with GitOps.",
+        "Designing multi-tenant Internal Developer Platforms on Kubernetes — GitOps-driven from cluster provisioning to production delivery.",
       highlights: [
-        "Internal Developer Platforms on Kubernetes",
-        "Automated CI/CD pipelines with GitOps",
-        "Service mesh configuration & cluster provisioning",
+        "Multi-tenant platforms on Azure/AKS",
+        "GitOps with ArgoCD, Argo Workflows & Events",
+        "Event-driven autoscaling & scale-to-zero with KEDA",
       ],
-      tags: ["Kubernetes", "Helm", "ArgoCD", "Flux", "Istio", "Terraform", "GitOps"],
+      tags: ["Kubernetes", "AKS", "ArgoCD", "Argo Workflows", "KEDA", "GitOps"],
     },
     {
-      icon: "cloud-cog" as const,
-      title: "Cloud Architecture",
+      icon: "component" as const,
+      title: "Kubernetes Operators in Go",
       description:
-        "Architecting multi-cloud environments across Azure and GCP with Infrastructure as Code. Landing zones, cost governance, and compliance-ready infrastructure.",
+        "Extending Kubernetes with custom operators and controllers — turning platform runbooks into self-healing automation.",
       highlights: [
-        "Multi-cloud environments across Azure & GCP",
-        "Infrastructure as Code & landing zone design",
-        "Cost governance & FinOps practices",
+        "Custom controllers with kubebuilder & controller-runtime",
+        "CRD design & Kubernetes API conventions",
+        "Reconciliation patterns for production workloads",
       ],
-      tags: ["Azure", "GCP", "Terraform", "Pulumi", "FinOps", "Landing Zones"],
+      tags: ["Go", "kubebuilder", "controller-runtime", "CRDs", "Operators"],
     },
     {
       icon: "brain-circuit" as const,
       title: "ML Infrastructure",
       description:
-        "Building end-to-end ML platforms: scalable training pipelines, low-latency model serving, and GPU cluster orchestration on Kubernetes.",
+        "Building multi-tenant ML platforms on Kubernetes: experiment tracking, model serving, and streaming pipelines that scale to zero when idle.",
       highlights: [
-        "Scalable training & model serving pipelines",
-        "GPU cluster orchestration on Kubernetes",
-        "End-to-end MLOps automation",
+        "Multi-tenant ML platforms on Kubernetes",
+        "MLflow experiment tracking & model registry",
+        "Kafka streaming & scale-to-zero serving",
       ],
-      tags: ["MLOps", "Kubeflow", "GPU", "Model Serving", "Python", "Ray"],
+      tags: ["MLflow", "Kafka", "KEDA", "Python", "MLOps"],
     },
     {
-      icon: "component" as const,
-      title: "Software Architecture",
+      icon: "cloud-cog" as const,
+      title: "Cluster Networking & Policy",
       description:
-        "Designing distributed systems in .NET and Python — microservices, event-driven architectures, and high-throughput data processing pipelines.",
+        "Securing and connecting production clusters — eBPF networking, policy-as-code, and modern ingress with the Gateway API.",
       highlights: [
-        "Microservices & event-driven architectures",
-        "CQRS/ES patterns & distributed systems",
-        "High-throughput data processing pipelines",
+        "eBPF networking & observability with Cilium",
+        "Policy-as-code & admission control with Kyverno",
+        "Traefik ingress on the Gateway API",
       ],
-      tags: [".NET", "Python", "Kafka", "gRPC", "CQRS", "Event Sourcing"],
+      tags: ["Cilium", "Kyverno", "Traefik", "Gateway API", "eBPF"],
     },
   ],
+
+  audiences: [
+    {
+      icon: "briefcase" as const,
+      title: "Hire me",
+      description:
+        "Consulting on Kubernetes platforms, GitOps, and ML infrastructure — advisory, hands-on delivery, or audits.",
+      href: "/work-with-me",
+      cta: "Work with me",
+    },
+    {
+      icon: "flask-conical" as const,
+      title: "Research",
+      description:
+        "Serverless computing and ML systems — publications-first PhD path with CloudLab URV.",
+      href: "/research",
+      cta: "Explore research",
+    },
+    {
+      icon: "git-pull-request" as const,
+      title: "Open Source",
+      description:
+        "Contributions to Lithops' Kubernetes backend and cloud-native tooling.",
+      href: "/open-source",
+      cta: "See contributions",
+    },
+    {
+      icon: "mic" as const,
+      title: "Speaking",
+      description:
+        "Talks on Kubernetes, platform engineering, and serverless — available for conferences and meetups.",
+      href: "/speaking",
+      cta: "Book a talk",
+    },
+  ],
+
+  workWithMe: {
+    intro:
+      "I take on a small number of consulting engagements alongside my full-time work. If you need senior, hands-on help with Kubernetes, GitOps, cloud architecture, or ML infrastructure — this is what I do best.",
+    engagements: [
+      {
+        title: "Advisory",
+        description:
+          "Architecture guidance, technology decisions, and roadmap reviews — recurring sessions or on-demand.",
+      },
+      {
+        title: "Hands-on delivery",
+        description:
+          "Embedded engineering: building platforms, pipelines, and operators alongside your team.",
+      },
+      {
+        title: "Audits & reviews",
+        description:
+          "Fixed-scope assessment of your Kubernetes, cloud, or ML setup with a prioritized, actionable report.",
+      },
+    ],
+  },
 
   services: [
     {
       icon: "ship-wheel" as const,
       title: "Kubernetes & Platform Engineering",
-      description: "Production-grade cluster design, migration from VMs to containers, and Internal Developer Platform setup with GitOps workflows.",
-      deliverables: ["K8s cluster architecture & setup", "CI/CD pipeline with ArgoCD/Flux", "Developer self-service portal", "Migration strategy & execution"],
+      description: "Production-grade cluster and platform design on AKS — multi-tenancy, developer self-service, and migration from VMs or legacy CI/CD.",
+      deliverables: ["Cluster & platform architecture", "Multi-tenant isolation model", "GitOps delivery with ArgoCD", "Migration strategy & execution"],
     },
     {
       icon: "infinity" as const,
-      title: "DevOps & GitOps",
-      description: "End-to-end automation of your deployment pipeline — from infrastructure provisioning to production releases with full observability.",
-      deliverables: ["GitOps workflow design", "IaC with Terraform/Pulumi", "Monitoring & alerting setup", "Incident response automation"],
+      title: "GitOps & Automation",
+      description: "End-to-end automation of your delivery pipeline — from provisioning through progressive rollouts, with policy and autoscaling built in.",
+      deliverables: ["ArgoCD & Argo Workflows setup", "Event-driven autoscaling with KEDA", "Policy-as-code with Kyverno", "Monitoring & alerting"],
     },
     {
       icon: "server-cog" as const,
-      title: "Cloud Architecture",
-      description: "Multi-cloud infrastructure design across Azure and GCP — landing zones, cost optimization, security posture, and compliance-ready setups.",
-      deliverables: ["Cloud landing zone design", "Cost optimization audit", "Multi-cloud strategy", "Security & compliance review"],
+      title: "ML Infrastructure",
+      description: "ML platforms that don't burn money — multi-tenant training and serving on Kubernetes with scale-to-zero economics.",
+      deliverables: ["MLflow tracking & model registry", "Scale-to-zero model serving", "Kafka streaming pipelines", "GPU scheduling & cost control"],
     },
     {
       icon: "scan-search" as const,
-      title: "Architecture Review & Advisory",
-      description: "Deep-dive analysis of your existing architecture with actionable recommendations. Identify bottlenecks, security gaps, and scaling opportunities.",
-      deliverables: ["Architecture audit report", "Scaling recommendations", "Tech debt prioritization", "Team upskilling sessions"],
+      title: "Audits & Advisory",
+      description: "Deep-dive review of your Kubernetes, cloud, or ML setup with actionable recommendations — bottlenecks, security gaps, and scaling risks.",
+      deliverables: ["Architecture audit report", "Security & policy review", "Cost optimization plan", "Team upskilling sessions"],
     },
   ],
 
@@ -161,6 +217,9 @@ export const siteConfig = {
     },
   ],
 
+  speakingIntro:
+    "I speak about Kubernetes, platform engineering, and serverless — most recently at 4Developers. Before that I organized the Azure Group Poland meetups in Rzeszów, and you'll spot me at KubeCon EU. Available for conferences and meetups.",
+
   speaking: [
     {
       slug: "azure-group-poland-rzeszow-2024",
@@ -191,68 +250,101 @@ export const siteConfig = {
   contact: {
     heading: "Let's Work Together",
     description:
-      "Whether you're looking for a Staff IC engineer or need consulting on platform engineering, cloud architecture, or ML infrastructure — let's talk.",
+      "Whether you need consulting on Kubernetes platforms or ML infrastructure, want to collaborate on serverless research, or are hiring for a Staff IC role — let's talk.",
   },
 
-  timeline: [
-    {
-      period: "2024 – Present",
-      role: "Cloud Architect & Platform Engineer",
-      company: "Hitachi Energy",
+  research: {
+    intro:
+      "Alongside my engineering work, I pursue applied systems research at the intersection of serverless computing and machine learning infrastructure — turning production platform problems into publishable results.",
+    status: {
+      label: "Publications-first PhD path",
       description:
-        "Owning multi-cloud architecture (Azure & GCP) for critical energy infrastructure. Designed and operating production Kubernetes clusters with full CKS/CKA/CKAD expertise — driving platform standardization, zero-trust security posture, and developer self-service across distributed engineering teams.",
+        "Pursuing a publications-first doctoral path in serverless computing and ML systems, in active collaboration with the CloudLab group at Universitat Rovira i Virgili (URV).",
     },
-    {
-      period: "2023 – 2024",
-      role: "Azure Solutions Architect",
-      company: "Benefit Systems International",
-      description:
-        "Defined cloud architecture strategy for international expansion. Designed highly available Azure infrastructure serving multiple markets, established IaC standards with Terraform, and reduced infrastructure provisioning time from weeks to hours through automated landing zone patterns.",
+    interests: [
+      {
+        icon: "function-square" as const,
+        title: "Serverless Computing",
+        description:
+          "Scale-to-zero architectures, stateless function runtimes, and elastic execution models for data-intensive workloads.",
+      },
+      {
+        icon: "database" as const,
+        title: "Vector Databases",
+        description:
+          "Stateless, serverless approaches to vector search and indexing — decoupling storage from compute for similarity workloads.",
+      },
+      {
+        icon: "brain-circuit" as const,
+        title: "ML Systems",
+        description:
+          "Distributed training and serving infrastructure, resource orchestration, and cost-efficient ML platforms on Kubernetes.",
+      },
+    ],
+    collaborations: [
+      {
+        name: "CloudLab · Universitat Rovira i Virgili (URV)",
+        role: "Research collaborator",
+        description:
+          "Working with the CloudLab group on stateless serverless vector databases — exploring how similarity search can run on elastic, scale-to-zero serverless runtimes.",
+        // TODO: add the CloudLab URV group URL
+        url: "",
+      },
+    ],
+    // Structured for growth — add entries as papers and preprints land.
+    // type: "paper" | "preprint" | "workshop" | "poster"
+    publications: [] as Array<{
+      title: string;
+      authors: string;
+      venue: string;
+      year: string;
+      type: string;
+      url: string;
+    }>,
+    // TODO: add ORCID / Google Scholar once available
+    profiles: {
+      orcid: "",
+      scholar: "",
     },
-    {
-      period: "2022 – 2023",
-      role: "Principal Cloud Engineer",
-      company: "Transition Technologies PSC",
-      description:
-        "Technical lead for cloud transformation initiatives. Established organization-wide cloud-native patterns, led architecture reviews, and mentored senior engineers on distributed systems design and Azure best practices. Drove adoption of GitOps and containerized workloads.",
-    },
-    {
-      period: "2018 – 2022",
-      role: "Azure Architect & .NET Team Lead",
-      company: "Billennium",
-      description:
-        "Led cross-functional engineering teams (Poland & Asia, 10+ engineers). Architected and delivered a government-scale tax filing platform (ASP.NET Core, Vue.js, Azure) handling millions of submissions with strict security and accessibility compliance. Owned technical roadmap, cost optimization, and client architecture decisions.",
-    },
-    {
-      period: "2017 – 2018",
-      role: "Software Developer",
-      company: "PGS Software",
-      description:
-        "Delivered end-to-end features in cross-functional product teams. Owned software design from requirements through production deployment, with focus on code quality, testing practices, and performance optimization.",
-    },
-    {
-      period: "2015 – 2017",
-      role: "Software Engineer",
-      company: "Ailleron",
-      description:
-        "Engineered mission-critical banking systems for top Polish financial institutions — authentication platforms, online deposit flows, and leasing portals processing real-time financial transactions. Reduced CI build times and introduced code review culture that became org-wide standard.",
-    },
-    {
-      period: "2013 – 2015",
-      role: "Software Developer",
-      company: "SolvSoft / International",
-      description:
-        "Built full-stack .NET applications in Agile teams. Gained international experience through a technical scholarship at Huazhong University (China) and an Erasmus engineering internship (Cyprus) — developing early cross-cultural collaboration and systems thinking skills.",
-    },
-  ],
+  },
+
+  openSource: {
+    intro:
+      "I build and contribute to cloud-native and serverless tooling. Below are the projects I maintain and the upstream work I've contributed to.",
+    // TODO: add your own repositories here. Set a real `url` to move a project
+    // out of the "coming soon" empty state.
+    projects: [
+      {
+        name: "TODO: project name",
+        description:
+          "TODO: short description of your own open-source project — what it does and why it exists.",
+        url: "",
+        tags: [] as string[],
+      },
+    ],
+    contributions: [
+      {
+        project: "Lithops",
+        description:
+          "Serverless computing framework for running massively parallel workloads across cloud backends. Six merged PRs to the Kubernetes backend: security hardening (non-root runtime, configurable securityContext), cluster architecture auto-detection, runtime build fixes, and unit test coverage.",
+        url: "https://github.com/lithops-cloud/lithops",
+        tags: ["Python", "Serverless", "Kubernetes"],
+        items: [
+          {
+            label: "All merged PRs",
+            url: "https://github.com/lithops-cloud/lithops/pulls?q=is%3Apr+author%3Amskuratowski+is%3Amerged",
+          },
+        ],
+      },
+    ],
+  },
 
   nav: [
-    { label: "Expertise", href: "#expertise" },
-    { label: "Services", href: "#services" },
-    { label: "Experience", href: "#experience" },
-    { label: "Certifications", href: "#certifications" },
-    { label: "Blog", href: "/blog" },
+    { label: "Work with me", href: "/work-with-me" },
+    { label: "Research", href: "/research" },
+    { label: "Open Source", href: "/open-source" },
     { label: "Speaking", href: "/speaking" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "#contact" },
   ],
 } as const;

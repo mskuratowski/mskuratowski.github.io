@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Mic, MapPin, ArrowLeft, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
@@ -16,17 +17,23 @@ export function SpeakingSection() {
     <section className="pt-28 pb-20 sm:pt-36">
       <Container>
         <AnimatedSection>
-          <a
+          <Link
             href="/"
             className="mb-8 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-text-primary"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to home
-          </a>
+          </Link>
           <SectionHeading
             title="Speaking"
             subtitle="Conference talks and community presentations"
           />
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.05}>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-text-secondary">
+            {siteConfig.speakingIntro}
+          </p>
         </AnimatedSection>
 
         {hasRealTalks ? (

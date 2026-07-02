@@ -27,7 +27,7 @@ export function ExpertiseSection() {
         <AnimatedSection>
           <SectionHeading
             title="Areas of Expertise"
-            subtitle="12+ years of building production systems across cloud, infrastructure, and software engineering"
+            subtitle="What 12+ years of building production systems looks like in practice"
           />
         </AnimatedSection>
 
