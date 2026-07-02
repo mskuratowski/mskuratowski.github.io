@@ -8,9 +8,9 @@ export const siteConfig = {
   hero: {
     badge: "Kubestronaut — top 500 worldwide",
     heading: "Hi, I'm Maciej.",
-    headingAccent: "I make infrastructure invisible.",
+    headingAccent: "Cloud architecture. Kubernetes platforms. ML infrastructure.",
     tagline:
-      "Staff Engineer with 12+ years in cloud-native. I architect Kubernetes platforms and write the Go operators behind them — from GitOps delivery to ML infrastructure at scale.",
+      "Staff Engineer with 12+ years in cloud-native. Multi-cloud architect on Azure and GCP, hands-on in Go — from platform design to production operations.",
   },
 
   metadata: {

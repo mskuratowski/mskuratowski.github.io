@@ -42,9 +42,15 @@ export function HeroSection() {
               className="mt-6 text-4xl font-bold leading-tight tracking-tight text-text-primary sm:text-5xl lg:text-6xl"
             >
               {siteConfig.hero.heading}
-              <br />
-              <span className="bg-gradient-to-r from-accent via-kube-blue to-kube-sky bg-clip-text text-transparent">
-                {siteConfig.hero.headingAccent}
+              <span className="mt-4 block text-2xl font-semibold leading-snug tracking-tight sm:text-3xl lg:text-4xl">
+                {siteConfig.hero.headingAccent.split(/(?<=\.)\s+/).map((phrase) => (
+                  <span
+                    key={phrase}
+                    className="mr-[0.35em] inline-block whitespace-nowrap bg-gradient-to-r from-accent via-kube-blue to-kube-sky bg-clip-text text-transparent last:mr-0"
+                  >
+                    {phrase}
+                  </span>
+                ))}
               </span>
             </motion.h1>
 
